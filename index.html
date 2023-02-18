@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Модальное окно и форма регистрации" />
+    <title>modal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+      integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+
+  <body>
+    <main>
+      <section class="hero">
+        <div class="container hero__container">
+          <h1 class="hero__title"></h1>
+          <button type="button" class="hero__button btn" data-modal-open>
+            modal window
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!--//================================================//
+        //         modal Window              
+        //================================================//-->
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal__close" data-modal-close>
+          <svg class="modal__close--icon" width="30" height="30">
+            <use href="./images/icons.svg#close"></use>
+          </svg>
+        </button>
+
+        <form class="modal__form" name="registration-form" id="modal__form">
+          <strong class="modal__form--title"
+            >Leave your details, we will call you back</strong
+          >
+          <div
+            class="modal__form--details"
+            role="group"
+            aria-labelledby="modal__form"
+          >
+            <div class="modal__form--field">
+              <label class="modal__form--label" for="name">name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                autocomplete="name"
+                class="modal__form--input"
+                placeholder="Your name"
+              />
+              <svg class="form__input--icon" width="18" height="18">
+                <use href="./images/icons.svg#person-black"></use>
+              </svg>
+            </div>
+
+            <div class="modal__form--field">
+              <label for="tel" class="modal__form-label">Phone number</label>
+              <input
+                type="tel"
+                name="tel"
+                id="tel"
+                autocomplete="on"
+                class="modal__form--input"
+                placeholder="+380"
+              />
+              <svg class="form__input--icon" width="18" height="18">
+                <use href="./images/icons.svg#phone-black"></use>
+              </svg>
+            </div>
+
+            <div class="modal__form--field">
+              <label for="email" class="modal__form--label">Mail</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                autocomplete="email"
+                class="modal__form--input"
+                placeholder="username@email.com"
+              />
+              <svg class="form__input--icon" width="18" height="18">
+                <use href="./images/icons.svg#email-black"></use>
+              </svg>
+            </div>
+
+            <div class="modal__form--field">
+              <label for="comment" class="modal__form--label">Comments</label>
+              <textarea
+                name="comment"
+                id="comment"
+                class="form__input--comment"
+                placeholder="Put your comments"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="modal__form--checkbox">
+            <label class="form__label--agree">
+              <input
+                class="form__input--agree"
+                type="checkbox"
+                name="agree"
+                value="agree"
+              />
+
+              <svg class="label__agree--icon" width="16" height="15">
+                <use href="./images/icons.svg#icon-check"></use>
+              </svg>
+
+              <span>I agree with the mailing and accept it</span>
+              <a href="#" class="label__agree--accent">agreement</a>
+            </label>
+          </div>
+
+          <button type="submit" class="modal__form--btn btn">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
+
+    <script defer src="./js/modal.js"></script>
+  </body>
+</html>
